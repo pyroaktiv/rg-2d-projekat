@@ -13,7 +13,7 @@ void setupRoadVertices();
 void setupBusStopCenterVertices();
 void setupBusStopCircleVertices();
 
-void setupTemporaryRectangleVertices();
+void setupControlBoardRectangleVertices();
 
 // Road length setup
 void setupRoadSegmentLengths();
@@ -22,7 +22,7 @@ void setupRoadSegmentLengths();
 void setupRoadVAO();
 void setupBusStopVAO();
 
-void setupTemporaryRectangleVAO();
+void setupControlBoardRectangleVAO();
 
 // Shader setup
 void setupShaders();

@@ -65,12 +65,12 @@ void setupBusStopCircleVertices() {
 }
 
 
-void setupTemporaryRectangleVertices() {
-	g_vert_temporary_rectangle = {
-		{-0.1, -0.05},
-		{0.1, -0.05},
-		{0.1, 0.05},
-		{-0.1, 0.05}
+void setupControlBoardRectangleVertices() {
+	g_vert_control_board_rectangle = {
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 2, -HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 2, -HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 2, HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 2, HEIGHT_CONTROL_BOARD_RECTANGLE / 2}
 	};
 }
 
@@ -125,15 +125,15 @@ void setupBusStopVAO() {
 	glVertexAttribDivisor(1, 1);
 }
 
-void setupTemporaryRectangleVAO() {
+void setupControlBoardRectangleVAO() {
 	unsigned VBOrect;
 
-	glGenVertexArrays(1, &g_VAO_temporary_rect);
-	glBindVertexArray(g_VAO_temporary_rect);
+	glGenVertexArrays(1, &g_VAO_control_board_rect);
+	glBindVertexArray(g_VAO_control_board_rect);
 
 	glGenBuffers(1, &VBOrect);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOrect);
-	glBufferData(GL_ARRAY_BUFFER, g_vert_temporary_rectangle.size() * sizeof(glm::vec2), g_vert_temporary_rectangle.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, g_vert_control_board_rectangle.size() * sizeof(glm::vec2), g_vert_control_board_rectangle.data(), GL_STATIC_DRAW);
 
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);

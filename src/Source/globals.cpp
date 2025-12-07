@@ -5,13 +5,13 @@ GLFWmonitor* g_monitor;
 const GLFWvidmode* g_monitor_mode;
 GLFWwindow* g_window;
 
+std::map<char, struct character_st> g_characters;
 
 // Vertices
 std::vector<glm::vec2> g_vert_road(NUM_SEGMENTS_ROAD + 1);
 std::vector<glm::vec2> g_vert_bus_stop_centers(NUM_BUS_STOPS);
 std::vector<glm::vec2> g_vert_bus_stop_circle(NUM_SEGMENTS_CIRCLE + 2);
-
-std::vector<glm::vec2> g_vert_temporary_rectangle(4);
+std::vector<glm::vec2> g_vert_control_board_rectangle(4);
 
 // Segment lengths
 std::vector<float> g_len_road_segments(NUM_SEGMENTS_ROAD + 1);
@@ -22,7 +22,7 @@ float g_len_road_segments_total;
 unsigned g_VAO_road;
 unsigned g_VAO_bus_stops;
 
-unsigned g_VAO_temporary_rect;
+unsigned g_VAO_control_board_rect;
 
 
 // Shaders

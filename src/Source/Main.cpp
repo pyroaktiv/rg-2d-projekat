@@ -36,11 +36,11 @@ int main()
     setupRoadSegmentLengths();
     setupBusStopCenterVertices();
     setupBusStopCircleVertices();
-    setupTemporaryRectangleVertices();
+    setupControlBoardRectangleVertices();
 
     setupRoadVAO();
     setupBusStopVAO();
-    setupTemporaryRectangleVAO();
+    setupControlBoardRectangleVAO();
 
     setupShaders();
 
@@ -56,7 +56,7 @@ int main()
 
         doFSMLoop();
 
-        drawTemporaryRectangle();
+        drawControlBoardRectangle();
 
         glfwSwapBuffers(g_window);
         glfwPollEvents();

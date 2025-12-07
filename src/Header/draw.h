@@ -4,7 +4,7 @@
 
 void drawRoad();
 void drawBusStops();
-void drawTemporaryRectangle();
+void drawControlBoardRectangle();
 
 
 #endif

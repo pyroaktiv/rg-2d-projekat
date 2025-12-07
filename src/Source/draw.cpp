@@ -21,11 +21,11 @@ void drawBusStops() {
 	glDrawArraysInstanced(GL_TRIANGLE_FAN, 0, NUM_SEGMENTS_CIRCLE + 2, 10);
 }
 
-void drawTemporaryRectangle() {
+void drawControlBoardRectangle() {
 	glUseProgram(g_shader_rect);
 
-	glUniform2f(glGetUniformLocation(g_shader_rect, "uCenter"), g_bus_position[0], g_bus_position[1]);
-	glBindVertexArray(g_VAO_temporary_rect);
+	glUniform2f(glGetUniformLocation(g_shader_rect, "uCenter"), 1.0f - WIDTH_CONTROL_BOARD_RECTANGLE / 2, -1.0f + HEIGHT_CONTROL_BOARD_RECTANGLE / 2);
+	glBindVertexArray(g_VAO_control_board_rect);
 
 	glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 }
