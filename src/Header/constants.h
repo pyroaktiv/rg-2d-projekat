@@ -1,0 +1,17 @@
+#ifndef CONSTANTS_H_DEFINED
+#define CONSTANTS_H_DEFINED
+
+#define TARGET_FPS 75.0f
+#define BUS_SPEED 0.1f
+
+#define NUM_SEGMENTS_CIRCLE 32
+#define NUM_SEGMENTS_ROAD 100
+#define NUM_BUS_STOPS 10
+
+#define WIDTH_ROAD_LINE 5.0f
+
+#define RADIUS_STATION_CIRCLE 0.03f
+
+#define TIME_WAIT_BUS_STOP 10.0
+
+#endif

@@ -163,3 +163,16 @@ GLFWcursor* loadImageToCursor(const char* filePath) {
 
     }
 }
+
+void preprocessTexture(unsigned& texture, const char* filePath) {
+    texture = loadImageToTexture(filePath);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+}
