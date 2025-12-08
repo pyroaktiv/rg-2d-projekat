@@ -8,6 +8,9 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "../Header/stb_image.h"
 
+#include "../Header/globals.h"
+
+
 // Autor: Nedeljko Tesanovic
 // Opis: pomocne funkcije za zaustavljanje programa, ucitavanje sejdera, tekstura i kursora
 // Smeju se koristiti tokom izrade projekta
@@ -162,4 +165,17 @@ GLFWcursor* loadImageToCursor(const char* filePath) {
         stbi_image_free(ImageData);
 
     }
+}
+
+void preprocessTexture(unsigned& texture, const char* filePath) {
+    texture = loadImageToTexture(filePath);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }

@@ -21,6 +21,21 @@
     <ClCompile Include="Source\Util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\fsm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\callbacks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\setup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\stb_image.h">
@@ -29,8 +44,90 @@
     <ClInclude Include="Header\Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Header\constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\fsm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\callbacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\draw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Shaders\road.vert" />
+    <None Include="Shaders\road.frag" />
+    <None Include="Shaders\circle.vert" />
+    <None Include="Shaders\circle.frag" />
+    <None Include="Shaders\rect.frag" />
+    <None Include="Shaders\rect.vert" />
+    <None Include="Shaders\rect-textured.frag" />
+    <None Include="Shaders\rect-textured.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\bus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\dogtags.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\doors-closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\doors-open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\man.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\officer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\x.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\HUD.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

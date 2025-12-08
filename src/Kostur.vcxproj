@@ -124,20 +124,60 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\callbacks.cpp" />
+    <ClCompile Include="Source\draw.cpp" />
+    <ClCompile Include="Source\fsm.cpp" />
+    <ClCompile Include="Source\globals.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\setup.cpp" />
     <ClCompile Include="Source\Util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\callbacks.h" />
+    <ClInclude Include="Header\constants.h" />
+    <ClInclude Include="Header\draw.h" />
+    <ClInclude Include="Header\fsm.h" />
+    <ClInclude Include="Header\globals.h" />
+    <ClInclude Include="Header\setup.h" />
     <ClInclude Include="Header\stb_image.h" />
     <ClInclude Include="Header\Util.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Shaders\circle.frag" />
+    <None Include="Shaders\circle.vert" />
+    <None Include="Shaders\rect-textured.frag" />
+    <None Include="Shaders\rect-textured.vert" />
+    <None Include="Shaders\rect.frag" />
+    <None Include="Shaders\rect.vert" />
+    <None Include="Shaders\road.frag" />
+    <None Include="Shaders\road.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\0.png" />
+    <Image Include="Resources\Images\1.png" />
+    <Image Include="Resources\Images\2.png" />
+    <Image Include="Resources\Images\3.png" />
+    <Image Include="Resources\Images\4.png" />
+    <Image Include="Resources\Images\5.png" />
+    <Image Include="Resources\Images\6.png" />
+    <Image Include="Resources\Images\7.png" />
+    <Image Include="Resources\Images\8.png" />
+    <Image Include="Resources\Images\9.png" />
+    <Image Include="Resources\Images\bus.png" />
+    <Image Include="Resources\Images\dogtags.png" />
+    <Image Include="Resources\Images\doors-closed.png" />
+    <Image Include="Resources\Images\doors-open.png" />
+    <Image Include="Resources\Images\HUD.png" />
+    <Image Include="Resources\Images\man.png" />
+    <Image Include="Resources\Images\officer.png" />
+    <Image Include="Resources\Images\x.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\glfw.3.4.0\build\native\glfw.targets" Condition="Exists('packages\glfw.3.4.0\build\native\glfw.targets')" />
     <Import Project="packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets" Condition="Exists('packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets')" />
+    <Import Project="packages\glm.1.0.2\build\native\glm.targets" Condition="Exists('packages\glm.1.0.2\build\native\glm.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -145,5 +185,6 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\glfw.3.4.0\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glfw.3.4.0\build\native\glfw.targets'))" />
     <Error Condition="!Exists('packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets'))" />
+    <Error Condition="!Exists('packages\glm.1.0.2\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glm.1.0.2\build\native\glm.targets'))" />
   </Target>
 </Project>
