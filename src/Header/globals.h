@@ -16,11 +16,11 @@ extern GLFWwindow* g_window;
 // Vertices
 extern std::vector<glm::vec2> g_vert_road;
 extern std::vector<glm::vec2> g_vert_bus_stop_circle;
-extern std::vector<glm::vec2> g_vert_control_board_rectangle;
 
 extern std::vector<glm::vec2> g_vert_bus_stop_centers;
 extern std::vector<glm::vec2> g_vert_texture_centers;
 
+extern std::vector<glm::vec4> g_vert_control_board_rectangle;
 extern std::vector<glm::vec4> g_vert_textures;
 
 // Segment lengths
@@ -58,6 +58,7 @@ extern unsigned g_tex_doors_open;
 extern unsigned g_tex_man;
 extern unsigned g_tex_officer;
 extern unsigned g_tex_x;
+extern unsigned g_tex_hud;
 
 extern std::vector<unsigned> g_number_tex;
 

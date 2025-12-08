@@ -74,4 +74,60 @@
     <None Include="Shaders\rect-textured.frag" />
     <None Include="Shaders\rect-textured.vert" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\9.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\bus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\dogtags.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\doors-closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\doors-open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\man.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\officer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\x.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\HUD.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

@@ -45,6 +45,7 @@ void preprocessTextures() {
 	preprocessTexture(g_tex_man, "Resources/Images/man.png");
 	preprocessTexture(g_tex_officer, "Resources/Images/officer.png");
 	preprocessTexture(g_tex_x, "Resources/Images/x.png");
+	preprocessTexture(g_tex_hud, "Resources/Images/HUD.png");
 }
 
 // Vertex setup
@@ -82,10 +83,10 @@ void setupBusStopCircleVertices() {
 
 void setupControlBoardRectangleVertices() {
 	g_vert_control_board_rectangle = {
-		{-WIDTH_CONTROL_BOARD_RECTANGLE / 2, -HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
-		{WIDTH_CONTROL_BOARD_RECTANGLE / 2, -HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
-		{WIDTH_CONTROL_BOARD_RECTANGLE / 2, HEIGHT_CONTROL_BOARD_RECTANGLE / 2},
-		{-WIDTH_CONTROL_BOARD_RECTANGLE / 2, HEIGHT_CONTROL_BOARD_RECTANGLE / 2}
+		{-0.6f, -0.2f, 0.0f, 0.0f},
+		{0.6f, -0.2f, 1.0f, 0.0f},
+		{0.6f, 0.2f, 1.0f, 1.0f},
+		{-0.6f, 0.2f, 0.0f, 1.0f}
 	};
 }
 
@@ -104,37 +105,25 @@ void setupTextureVertices() {
 		{WIDTH_CONTROL_BOARD_RECTANGLE / 4, HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 1.0f, 1.0f},
 		{-WIDTH_CONTROL_BOARD_RECTANGLE / 4, HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 0.0f, 1.0f},
 
-		// 3. Grupa - covek
-		{-0.06f, -0.08f, 0.0f, 0.0f},
-		{0.06f, -0.08f, 1.0f, 0.0f},
-		{0.06f, 0.08f, 1.0f, 1.0f},
-		{-0.06f, 0.08f, 0.0f, 1.0f},
-
-		// 4. Grupa - krst
-		{ -0.03f, -0.04f, 0.0f, 0.0f },
-		{0.03f, -0.04f, 1.0f, 0.0f},
-		{0.03f, 0.04f, 1.0f, 1.0f},
-		{-0.03f, 0.04f, 0.0f, 1.0f},
-
-		// 5. Grupa - vrata
+		// 3. Grupa - vrata
 		{ -0.06f, -0.1f, 0.0f, 0.0f },
 		{0.06f, -0.1f, 1.0f, 0.0f},
 		{0.06f, 0.1f, 1.0f, 1.0f},
 		{-0.06f, 0.1f, 0.0f, 1.0f},
 
-		// 6. Grupa - kontrolor
+		// 4. Grupa - kontrolor
 		{ -0.06f, -0.1f, 0.0f, 0.0f },
 		{0.06f, -0.1f, 1.0f, 0.0f},
 		{0.06f, 0.1f, 1.0f, 1.0f},
 		{-0.06f, 0.1f, 0.0f, 1.0f},
 		
-		// 7. Grupa - brojevi na kontrolnoj tabli
+		// 5. Grupa - brojevi na kontrolnoj tabli
 		{ -0.04f, -0.07f, 0.0f, 0.0f },
 		{0.04f, -0.07f, 1.0f, 0.0f},
 		{0.04f, 0.07f, 1.0f, 1.0f},
 		{-0.04f, 0.07f, 0.0f, 1.0f},
 
-		// 8. Grupa - autobus
+		// 6. Grupa - autobus
 		{-WIDTH_CONTROL_BOARD_RECTANGLE / 6, -HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 0.0f, 0.0f},
 		{WIDTH_CONTROL_BOARD_RECTANGLE / 6, -HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 1.0f, 0.0f},
 		{WIDTH_CONTROL_BOARD_RECTANGLE / 6, HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 1.0f, 1.0f},
@@ -151,29 +140,23 @@ void setupTextureCenterVertices() {
 	// 2. Watermark
 	g_vert_texture_centers.at(10) = { -0.75f, 0.85f };
 
-	// 3. covek
-	g_vert_texture_centers.at(11) = { 0.35f, -0.6f };
+	// 3. vrata
+	g_vert_texture_centers.at(11) = { 0.85f, -0.83f };
 
-	// 4. krst
-	g_vert_texture_centers.at(12) = { 0.7f, -0.6f };
-
-	// 5. vrata
-	g_vert_texture_centers.at(13) = { 0.4f, -0.85f };
-
-	// 6. kontrolor
-	g_vert_texture_centers.at(14) = { 0.7f, -0.85f };
+	// 4. kontrolor
+	g_vert_texture_centers.at(12) = { 0.64f, -0.82f };
 
 	// desetica broja ljudi
-	g_vert_texture_centers.at(15) = { 0.42f, -0.6f };
+	g_vert_texture_centers.at(13) = { -0.04f, -0.8f };
 
 	// desetica kazni
-	g_vert_texture_centers.at(16) = { 0.78f, -0.6f };
+	g_vert_texture_centers.at(14) = { 0.22f, -0.8f };
 
 	// jedinica broja ljudi
-	g_vert_texture_centers.at(17) = { 0.48f, -0.6f };
+	g_vert_texture_centers.at(15) = { 0.02f, -0.8f };
 
 	// jedinica kazni
-	g_vert_texture_centers.at(18) = { 0.84f, -0.6f };
+	g_vert_texture_centers.at(16) = { 0.28f, -0.8f };
 }
 
 
@@ -237,10 +220,13 @@ void setupControlBoardRectangleVAO() {
 
 	glGenBuffers(1, &VBOrect);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOrect);
-	glBufferData(GL_ARRAY_BUFFER, g_vert_control_board_rectangle.size() * sizeof(glm::vec2), g_vert_control_board_rectangle.data(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, g_vert_control_board_rectangle.size() * sizeof(glm::vec4), g_vert_control_board_rectangle.data(), GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+	glEnableVertexAttribArray(1);
 }
 
 void setupTextureVAO() {

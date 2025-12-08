@@ -168,6 +168,7 @@
     <Image Include="Resources\Images\dogtags.png" />
     <Image Include="Resources\Images\doors-closed.png" />
     <Image Include="Resources\Images\doors-open.png" />
+    <Image Include="Resources\Images\HUD.png" />
     <Image Include="Resources\Images\man.png" />
     <Image Include="Resources\Images\officer.png" />
     <Image Include="Resources\Images\x.png" />

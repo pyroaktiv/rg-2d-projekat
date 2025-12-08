@@ -8,11 +8,8 @@ unsigned random_number(unsigned n) {
 	static std::random_device rd;
 	static std::mt19937 gen(rd());
 
-	if (n != 0) {
-		std::uniform_int_distribution<> dist(0, n - 1);
-		return dist(gen);
-	}
-	return 0;
+	std::uniform_int_distribution<> dist(0, n);
+	return dist(gen);
 }
 
 glm::vec2 parametricCurve(float t) {
