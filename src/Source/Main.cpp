@@ -37,12 +37,17 @@ int main()
     setupBusStopCenterVertices();
     setupBusStopCircleVertices();
     setupControlBoardRectangleVertices();
+    setupTextureVertices();
+    setupTextureCenterVertices();
 
     setupRoadVAO();
     setupBusStopVAO();
     setupControlBoardRectangleVAO();
+    setupTextureVAO();
 
     setupShaders();
+
+    preprocessTextures();
 
     g_fsm_start_time = glfwGetTime();
 
@@ -57,6 +62,8 @@ int main()
         doFSMLoop();
 
         drawControlBoardRectangle();
+
+        drawTextures();
 
         glfwSwapBuffers(g_window);
         glfwPollEvents();

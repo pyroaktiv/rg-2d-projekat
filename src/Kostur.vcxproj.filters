@@ -62,9 +62,6 @@
     <ClInclude Include="Header\draw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Header\defs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,5 +71,7 @@
     <None Include="Shaders\circle.frag" />
     <None Include="Shaders\rect.frag" />
     <None Include="Shaders\rect.vert" />
+    <None Include="Shaders\rect-textured.frag" />
+    <None Include="Shaders\rect-textured.vert" />
   </ItemGroup>
 </Project>

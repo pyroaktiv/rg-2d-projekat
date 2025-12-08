@@ -5,6 +5,7 @@
 void drawRoad();
 void drawBusStops();
 void drawControlBoardRectangle();
+void drawTextures();
 
 
 #endif

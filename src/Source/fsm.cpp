@@ -1,7 +1,19 @@
 #include "../Header/fsm.h"
 #include "../Header/globals.h"
+#include <random>
 
 double wait_start_time;
+
+unsigned random_number(unsigned n) {
+	static std::random_device rd;
+	static std::mt19937 gen(rd());
+
+	if (n != 0) {
+		std::uniform_int_distribution<> dist(0, n - 1);
+		return dist(gen);
+	}
+	return 0;
+}
 
 glm::vec2 parametricCurve(float t) {
 	float xt = 0.1f * (pow(2 + cos(t), 2) - 9 * pow(sin(t), 2)) - 0.3;
@@ -34,6 +46,14 @@ void doFSMLoop() {
 	if (isInProximity(g_fsm_next_bus_stop) && g_fsm_current_bus_stop == -1) {
 		g_fsm_current_bus_stop = g_fsm_next_bus_stop;
 		g_fsm_next_bus_stop = (g_fsm_next_bus_stop + 1) % NUM_BUS_STOPS;
+
+		if (g_fsm_is_control) {
+			g_fsm_is_control = false;
+			unsigned numFines = random_number(g_fsm_num_passengers - 1);
+			g_fsm_num_passengers -= numFines + 1;
+			g_fsm_num_fines += numFines;
+		}
+
 		wait_start_time = glfwGetTime();
 		g_fsm_total_num_stops++;
 	}

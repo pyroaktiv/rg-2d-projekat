@@ -23,14 +23,29 @@ void setupScreen() {
 }
 
 void setupCallbacks() {
-	glfwSetKeyCallback(g_window, exit_callback);
+	glfwSetKeyCallback(g_window, key_callback);
+	glfwSetMouseButtonCallback(g_window, passenger_mouse_callback);
 }
 
 void preprocessTextures() {
-
+	preprocessTexture(g_number_tex[0], "Resources/Images/0.png");
+	preprocessTexture(g_number_tex[1], "Resources/Images/1.png");
+	preprocessTexture(g_number_tex[2], "Resources/Images/2.png");
+	preprocessTexture(g_number_tex[3], "Resources/Images/3.png");
+	preprocessTexture(g_number_tex[4], "Resources/Images/4.png");
+	preprocessTexture(g_number_tex[5], "Resources/Images/5.png");
+	preprocessTexture(g_number_tex[6], "Resources/Images/6.png");
+	preprocessTexture(g_number_tex[7], "Resources/Images/7.png");
+	preprocessTexture(g_number_tex[8], "Resources/Images/8.png");
+	preprocessTexture(g_number_tex[9], "Resources/Images/9.png");
+	preprocessTexture(g_tex_bus, "Resources/Images/bus.png");
+	preprocessTexture(g_tex_dogtags, "Resources/Images/dogtags.png");
+	preprocessTexture(g_tex_doors_closed, "Resources/Images/doors-closed.png");
+	preprocessTexture(g_tex_doors_open, "Resources/Images/doors-open.png");
+	preprocessTexture(g_tex_man, "Resources/Images/man.png");
+	preprocessTexture(g_tex_officer, "Resources/Images/officer.png");
+	preprocessTexture(g_tex_x, "Resources/Images/x.png");
 }
-
-
 
 // Vertex setup
 void setupRoadVertices() {
@@ -73,6 +88,95 @@ void setupControlBoardRectangleVertices() {
 		{-WIDTH_CONTROL_BOARD_RECTANGLE / 2, HEIGHT_CONTROL_BOARD_RECTANGLE / 2}
 	};
 }
+
+
+void setupTextureVertices() {
+	g_vert_textures = {
+		// 1. Grupa - brojevi stanice
+		{-RADIUS_STATION_CIRCLE, -RADIUS_STATION_CIRCLE, 0.0f, 0.0f},
+		{RADIUS_STATION_CIRCLE, -RADIUS_STATION_CIRCLE, 1.0f, 0.0f},
+		{RADIUS_STATION_CIRCLE, RADIUS_STATION_CIRCLE, 1.0f, 1.0f},
+		{-RADIUS_STATION_CIRCLE, RADIUS_STATION_CIRCLE, 0.0f, 1.0f},
+
+		// 2. Grupa - watermark
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 4, -HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 0.0f, 0.0f},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 4, -HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 1.0f, 0.0f},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 4, HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 1.0f, 1.0f},
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 4, HEIGHT_CONTROL_BOARD_RECTANGLE / 4, 0.0f, 1.0f},
+
+		// 3. Grupa - covek
+		{-0.06f, -0.08f, 0.0f, 0.0f},
+		{0.06f, -0.08f, 1.0f, 0.0f},
+		{0.06f, 0.08f, 1.0f, 1.0f},
+		{-0.06f, 0.08f, 0.0f, 1.0f},
+
+		// 4. Grupa - krst
+		{ -0.03f, -0.04f, 0.0f, 0.0f },
+		{0.03f, -0.04f, 1.0f, 0.0f},
+		{0.03f, 0.04f, 1.0f, 1.0f},
+		{-0.03f, 0.04f, 0.0f, 1.0f},
+
+		// 5. Grupa - vrata
+		{ -0.06f, -0.1f, 0.0f, 0.0f },
+		{0.06f, -0.1f, 1.0f, 0.0f},
+		{0.06f, 0.1f, 1.0f, 1.0f},
+		{-0.06f, 0.1f, 0.0f, 1.0f},
+
+		// 6. Grupa - kontrolor
+		{ -0.06f, -0.1f, 0.0f, 0.0f },
+		{0.06f, -0.1f, 1.0f, 0.0f},
+		{0.06f, 0.1f, 1.0f, 1.0f},
+		{-0.06f, 0.1f, 0.0f, 1.0f},
+		
+		// 7. Grupa - brojevi na kontrolnoj tabli
+		{ -0.04f, -0.07f, 0.0f, 0.0f },
+		{0.04f, -0.07f, 1.0f, 0.0f},
+		{0.04f, 0.07f, 1.0f, 1.0f},
+		{-0.04f, 0.07f, 0.0f, 1.0f},
+
+		// 8. Grupa - autobus
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 6, -HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 0.0f, 0.0f},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 6, -HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 1.0f, 0.0f},
+		{WIDTH_CONTROL_BOARD_RECTANGLE / 6, HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 1.0f, 1.0f},
+		{-WIDTH_CONTROL_BOARD_RECTANGLE / 6, HEIGHT_CONTROL_BOARD_RECTANGLE / 6, 0.0f, 1.0f},
+	};
+}
+
+void setupTextureCenterVertices() {
+	// 1. Grupa - brojevi stanice
+	for (int i = 0; i < g_vert_bus_stop_centers.size(); i++) {
+		g_vert_texture_centers.at(i) = g_vert_bus_stop_centers.at(i);
+	}
+
+	// 2. Watermark
+	g_vert_texture_centers.at(10) = { -0.75f, 0.85f };
+
+	// 3. covek
+	g_vert_texture_centers.at(11) = { 0.35f, -0.6f };
+
+	// 4. krst
+	g_vert_texture_centers.at(12) = { 0.7f, -0.6f };
+
+	// 5. vrata
+	g_vert_texture_centers.at(13) = { 0.4f, -0.85f };
+
+	// 6. kontrolor
+	g_vert_texture_centers.at(14) = { 0.7f, -0.85f };
+
+	// desetica broja ljudi
+	g_vert_texture_centers.at(15) = { 0.42f, -0.6f };
+
+	// desetica kazni
+	g_vert_texture_centers.at(16) = { 0.78f, -0.6f };
+
+	// jedinica broja ljudi
+	g_vert_texture_centers.at(17) = { 0.48f, -0.6f };
+
+	// jedinica kazni
+	g_vert_texture_centers.at(18) = { 0.84f, -0.6f };
+}
+
+
 
 // Road length setup
 void setupRoadSegmentLengths() {
@@ -139,9 +243,29 @@ void setupControlBoardRectangleVAO() {
 	glEnableVertexAttribArray(0);
 }
 
+void setupTextureVAO() {
+	unsigned VBOtex;
+
+	glGenVertexArrays(1, &g_VAO_textures);
+	glBindVertexArray(g_VAO_textures);
+
+	glGenBuffers(1, &VBOtex);
+	glBindBuffer(GL_ARRAY_BUFFER, VBOtex);
+	glBufferData(GL_ARRAY_BUFFER, g_vert_textures.size() * sizeof(glm::vec4), g_vert_textures.data(), GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+	glEnableVertexAttribArray(1);
+}
+
 // Shader setup
 void setupShaders() {
 	g_shader_road = createShader("Shaders/road.vert", "Shaders/road.frag");
 	g_shader_circle = createShader("Shaders/circle.vert", "Shaders/circle.frag");
 	g_shader_rect = createShader("Shaders/rect.vert", "Shaders/rect.frag");
+	g_shader_rect_textured = createShader("Shaders/rect-textured.vert", "Shaders/rect-textured.frag");
+
+	glUseProgram(g_shader_rect_textured);
+	glUniform1i(glGetUniformLocation(g_shader_rect_textured, "sTex"), 0);
 }

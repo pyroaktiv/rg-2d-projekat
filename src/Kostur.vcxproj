@@ -106,7 +106,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>packages/freetype.2.8.0.1/build/native/lib/x64/v141/static/Release/freetype28.lib;opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,7 +135,6 @@
   <ItemGroup>
     <ClInclude Include="Header\callbacks.h" />
     <ClInclude Include="Header\constants.h" />
-    <ClInclude Include="Header\defs.h" />
     <ClInclude Include="Header\draw.h" />
     <ClInclude Include="Header\fsm.h" />
     <ClInclude Include="Header\globals.h" />
@@ -147,18 +146,37 @@
     <None Include="packages.config" />
     <None Include="Shaders\circle.frag" />
     <None Include="Shaders\circle.vert" />
+    <None Include="Shaders\rect-textured.frag" />
+    <None Include="Shaders\rect-textured.vert" />
     <None Include="Shaders\rect.frag" />
     <None Include="Shaders\rect.vert" />
     <None Include="Shaders\road.frag" />
     <None Include="Shaders\road.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\0.png" />
+    <Image Include="Resources\Images\1.png" />
+    <Image Include="Resources\Images\2.png" />
+    <Image Include="Resources\Images\3.png" />
+    <Image Include="Resources\Images\4.png" />
+    <Image Include="Resources\Images\5.png" />
+    <Image Include="Resources\Images\6.png" />
+    <Image Include="Resources\Images\7.png" />
+    <Image Include="Resources\Images\8.png" />
+    <Image Include="Resources\Images\9.png" />
+    <Image Include="Resources\Images\bus.png" />
+    <Image Include="Resources\Images\dogtags.png" />
+    <Image Include="Resources\Images\doors-closed.png" />
+    <Image Include="Resources\Images\doors-open.png" />
+    <Image Include="Resources\Images\man.png" />
+    <Image Include="Resources\Images\officer.png" />
+    <Image Include="Resources\Images\x.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\glfw.3.4.0\build\native\glfw.targets" Condition="Exists('packages\glfw.3.4.0\build\native\glfw.targets')" />
     <Import Project="packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets" Condition="Exists('packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets')" />
     <Import Project="packages\glm.1.0.2\build\native\glm.targets" Condition="Exists('packages\glm.1.0.2\build\native\glm.targets')" />
-    <Import Project="packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets" Condition="Exists('packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets')" />
-    <Import Project="packages\freetype.2.8.0.1\build\native\freetype.targets" Condition="Exists('packages\freetype.2.8.0.1\build\native\freetype.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -167,7 +185,5 @@
     <Error Condition="!Exists('packages\glfw.3.4.0\build\native\glfw.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glfw.3.4.0\build\native\glfw.targets'))" />
     <Error Condition="!Exists('packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glew-2.2.0.2.2.0.1\build\native\glew-2.2.0.targets'))" />
     <Error Condition="!Exists('packages\glm.1.0.2\build\native\glm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\glm.1.0.2\build\native\glm.targets'))" />
-    <Error Condition="!Exists('packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets'))" />
-    <Error Condition="!Exists('packages\freetype.2.8.0.1\build\native\freetype.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freetype.2.8.0.1\build\native\freetype.targets'))" />
   </Target>
 </Project>

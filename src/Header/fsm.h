@@ -5,6 +5,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+unsigned random_number(int n);
+
 glm::vec2 parametricCurve(float t);
 
 bool isInProximity(unsigned station);
