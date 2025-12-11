@@ -7,6 +7,8 @@ void setupScreen();
 void setupCallbacks();
 void preprocessTextures();
 
+void setupInitCursor();
+
 
 // Vertex setup
 void setupRoadVertices();

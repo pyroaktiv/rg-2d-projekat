@@ -12,6 +12,9 @@ extern GLFWmonitor* g_monitor;
 extern const GLFWvidmode* g_monitor_mode;
 extern GLFWwindow* g_window;
 
+extern GLFWcursor* g_cursor;
+extern GLFWcursor* g_cursorPressed;
+
 
 // Vertices
 extern std::vector<glm::vec2> g_vert_road;
