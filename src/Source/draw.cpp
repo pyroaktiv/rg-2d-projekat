@@ -68,7 +68,7 @@ void drawTextures() {
 	glUniform4f(glGetUniformLocation(g_shader_rect_textured, "uCol"), 1.0f, 1.0f, 1.0f, 1.0f);
 	glDrawArrays(GL_TRIANGLE_FAN, 16, 4);
 
-	glBindTexture(GL_TEXTURE_2D, g_number_tex[g_fsm_num_fines / 10]);
+	glBindTexture(GL_TEXTURE_2D, g_number_tex[(g_fsm_num_fines / 10) % 10]);
 	glUniform2f(glGetUniformLocation(g_shader_rect_textured, "uCenter"), g_vert_texture_centers[14][0], g_vert_texture_centers[14][1]);
 	glUniform4f(glGetUniformLocation(g_shader_rect_textured, "uCol"), 1.0f, 0.0f, 0.0f, 1.0f);
 	glDrawArrays(GL_TRIANGLE_FAN, 16, 4);
