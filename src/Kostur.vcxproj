@@ -165,6 +165,8 @@
     <Image Include="Resources\Images\8.png" />
     <Image Include="Resources\Images\9.png" />
     <Image Include="Resources\Images\bus.png" />
+    <Image Include="Resources\Images\cursor-pressed.png" />
+    <Image Include="Resources\Images\cursor.png" />
     <Image Include="Resources\Images\dogtags.png" />
     <Image Include="Resources\Images\doors-closed.png" />
     <Image Include="Resources\Images\doors-open.png" />

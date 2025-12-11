@@ -129,5 +129,11 @@
     <Image Include="Resources\Images\HUD.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Resources\Images\cursor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Images\cursor-pressed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

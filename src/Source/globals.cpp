@@ -5,6 +5,9 @@ GLFWmonitor* g_monitor;
 const GLFWvidmode* g_monitor_mode;
 GLFWwindow* g_window;
 
+GLFWcursor* g_cursor;
+GLFWcursor* g_cursorPressed;
+
 // Vertices
 std::vector<glm::vec2> g_vert_road(NUM_SEGMENTS_ROAD + 1);
 std::vector<glm::vec2> g_vert_bus_stop_centers(NUM_BUS_STOPS);

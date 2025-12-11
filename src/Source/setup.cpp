@@ -24,7 +24,7 @@ void setupScreen() {
 
 void setupCallbacks() {
 	glfwSetKeyCallback(g_window, key_callback);
-	glfwSetMouseButtonCallback(g_window, passenger_mouse_callback);
+	glfwSetMouseButtonCallback(g_window, mouse_callback);
 }
 
 void preprocessTextures() {
@@ -46,6 +46,12 @@ void preprocessTextures() {
 	preprocessTexture(g_tex_officer, "Resources/Images/officer.png");
 	preprocessTexture(g_tex_x, "Resources/Images/x.png");
 	preprocessTexture(g_tex_hud, "Resources/Images/HUD.png");
+}
+
+void setupInitCursor() {
+	g_cursor = loadImageToCursor("Resources/Images/cursor.png");
+	g_cursorPressed = loadImageToCursor("Resources/Images/cursor-pressed.png");
+	glfwSetCursor(g_window, g_cursor);
 }
 
 // Vertex setup

@@ -5,7 +5,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-unsigned random_number(int n);
+unsigned random_number(unsigned n);
 
 glm::vec2 parametricCurve(float t);
 
